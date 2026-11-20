@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.so
+*.egg-info/
+build/
+real2sim-eval/.venv/
+log/
+sysid_routing/scene/gello_gripper.json

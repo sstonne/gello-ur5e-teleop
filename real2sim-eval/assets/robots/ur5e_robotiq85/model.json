@@ -1,0 +1,23 @@
+{
+  "sources": {
+    "universal_robot": [
+      "https://github.com/ros-industrial/universal_robot.git",
+      "39ad110d8f2e8f66856a201cca88aa7a7025e3eb"
+    ],
+    "robotiq": [
+      "https://github.com/ros-industrial-attic/robotiq.git",
+      "45196f6558fe8ba9d89bc8a105396c68c3e7e892"
+    ]
+  },
+  "mount_xyz_m": [
+    0,
+    0,
+    0
+  ],
+  "mount_rpy_deg": [
+    0,
+    0,
+    0
+  ],
+  "format": 5
+}

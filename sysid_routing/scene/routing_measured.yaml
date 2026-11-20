@@ -1,0 +1,307 @@
+seed: 0
+env_name: BaseEnv-v0
+obs_mode: rgbd
+exp_root: log/experiments
+timestamp: null
+online: false
+viser_port: 6789
+save_state: false
+goal_capture_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/projects/RealTable/original_sim/goal.npz
+env:
+  sim:
+    frame_rate: 30
+    duration: 30
+  robot:
+    type: ur5e
+    focused_keyboard: true
+    use_pusher: false
+    n_grippers: 1
+    n_qpos: 6
+    init_gripper_openness: 800
+    init_eef_xyz:
+    - -0.06417082840993696
+    - 0.5474288076099576
+    - 0.28749516366425915
+    do_velocity_control: true
+    init_joints_deg:
+    - 82.6903063971802
+    - -77.47455299569775
+    - 106.4991780467763
+    - -119.02462506319586
+    - -89.99999998838652
+    - -7.7299868799955735
+    init_quat:
+    - 0.0
+    - 0.9999932738101165
+    - 0.003667742428982789
+    - 0.0
+    init_gripper:
+    - 1.0
+    max_joint_speed_rad_s: 1.0
+    contact_preload_mm: 8.0
+    training_pick_index: 19
+  urdf:
+    ik_urdf_path: ${oc.env:R2S_WORKSPACE}/real2sim-eval/assets/robots/ur5e_robotiq85/ur5e_robotiq_85.urdf
+    collision_urdf_path: ${oc.env:R2S_WORKSPACE}/real2sim-eval/assets/robots/ur5e_robotiq85/ur5e_robotiq_85.urdf
+    collision_link_names:
+    - left_inner_finger
+    - right_inner_finger
+  cameras:
+  - type: side
+    h: 480
+    w: 848
+    intr:
+    - 427.2920227050781
+    - 0.0
+    - 429.9993591308594
+    - 0.0
+    - 426.7926940917969
+    - 242.8115234375
+    - 0.0
+    - 0.0
+    - 1.0
+    c2w:
+    - -1.0
+    - -0.0
+    - 0.0
+    - -0.06
+    - -0.0
+    - 0.6476484200955404
+    - -0.7619393177594593
+    - 1.6
+    - 0.0
+    - -0.7619393177594593
+    - -0.6476484200955404
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+  - type: side
+    name: eye_level
+    h: 480
+    w: 848
+    intr:
+    - 427.2920227050781
+    - 0.0
+    - 429.9993591308594
+    - 0.0
+    - 426.7926940917969
+    - 242.8115234375
+    - 0.0
+    - 0.0
+    - 1.0
+    c2w:
+    - -1.0
+    - -0.0
+    - 0.0
+    - -0.06
+    - -0.0
+    - 0.08154569487722074
+    - -0.9966696040549201
+    - 1.55
+    - 0.0
+    - -0.9966696040549201
+    - -0.08154569487722074
+    - 0.1
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+  - type: wrist
+    h: 480
+    w: 848
+    intr:
+    - 320.0
+    - 0
+    - 424.0
+    - 0
+    - 320.0
+    - 240.0
+    - 0
+    - 0
+    - 1
+    c2w:
+    - 0.9015230574682735
+    - 0.0
+    - -0.4327310675847713
+    - 0.12
+    - 0.0
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.4327310675847713
+    - -0.0
+    - 0.9015230574682735
+    - 0.1
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+gs:
+  use_shs: false
+  use_grid_randomization: false
+  scene:
+    table_splat_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/projects/RealTable/table_registration/scene.ply
+    total_mask_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/projects/RealTable/built/link_labels.npy
+  object:
+    path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/Rope_3D/scan_50cm_2p5cm/simulator_preview/rope.ply
+    pose:
+    - -0.9985469094354591
+    - -0.053889420639797715
+    - 0.0
+    - -0.05387130947660335
+    - 0.053889420639797715
+    - -0.9985469094354591
+    - 0.0
+    - 0.5124923333376645
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.007495163664259116
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    translation_range:
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    azimuth_range:
+    - 0.0
+    - 0.0
+    color_A:
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    color_b:
+    - 0.0
+    - 0.0
+    - 0.0
+    grid_randomization:
+      xy:
+      - - -0.05
+        - -0.05
+      - - -0.05
+        - 0.0
+      - - -0.05
+        - 0.05
+      - - 0.0
+        - -0.05
+      - - 0.0
+        - 0.0
+      - - 0.0
+        - 0.05
+      - - 0.05
+        - -0.05
+      - - 0.05
+        - 0.0
+      - - 0.05
+        - 0.05
+      theta:
+      - -10
+      - 0
+      - 10
+      one_to_one: false
+  meshes:
+  - name: clip
+    splat_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/Rope_Routing/clip/clip.ply
+    mesh_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/Rope_Routing/clip/clip_mesh.stl
+    pose:
+    - -0.08054686090266314
+    - 0.9967508230238523
+    - 0.0
+    - -0.0522
+    - -0.9967508230238523
+    - -0.08054686090266314
+    - 0.0
+    - 0.718
+    - 0.0
+    - 0.0
+    - 1.0
+    - -0.006889999999999999
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    translation_range:
+    - -0.0
+    - 0.0
+    - -0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    azimuth_range:
+    - 0
+    - 0
+    color_A:
+    - 0.1495
+    - 0.2935
+    - 0.057
+    - 0.1495
+    - 0.2935
+    - 0.057
+    - 0.1495
+    - 0.2935
+    - 0.057
+    color_b:
+    - 0.15
+    - 0.15
+    - 0.15
+    clip_scale: 1.0
+physics:
+  ckpt_path: ${oc.env:R2S_WORKSPACE}/ur5e_real2sim/projects/RealTable/shared_material_sim
+  case_name: scan_rope_shared_456
+  use_graph: true
+  fps: 30
+  dt: 5.0e-05
+  num_substeps: 667
+  duration: 30
+  dashpot_damping: 101.92233933763151
+  drag_damping: 6.696276291520852
+  init_spring_Y: 1003.5885040562123
+  spring_Y_min: 0
+  spring_Y_max: 100000.0
+  object_radius: 0.03155599583896631
+  object_max_neighbours: 28
+  controller_radius: 0.05612069416341873
+  controller_max_neighbours: 49
+  collide_elas: 0.12646387760541938
+  collide_fric: 1.154005927684992
+  collide_self_elas: 0.5
+  collide_self_fric: 0.3
+  collide_eef_elas: 0.0
+  collide_eef_fric: 1.0
+  collision_requires_grad: true
+  self_collision: true
+  collision_dist: 0.005
+  reverse_z: false
+  icp_threshold: 0.02
+  use_lbs: true
+  precompute_relations: true
+  table_height: -0.01189
+  grasp_force_threshold: 30000.0
+  visualize_mesh_points: false
+  visualize_phystwin_points: false
+  visualize_eef_points: false
+policy:
+  inference_cfg_path: null
+  checkpoint_path: null
+  n_episodes: 20
+renderer:
+  gs_center:
+  - 0.0
+  - 0.0
+  - 0.0
+  gs_distance: 0.8
+  gs_azimuth: 160
+  gs_elevation: 20
